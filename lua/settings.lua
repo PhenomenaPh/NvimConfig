@@ -4,3 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 
+-- Which-key
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+vim.o.mouse = ''
