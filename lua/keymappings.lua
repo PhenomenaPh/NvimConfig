@@ -9,6 +9,7 @@ wk.register({
 		g = { builtin.live_grep, "Live Grep" },
 		b = { builtin.buffers, "Buffers" },
 		h = { builtin.help_tags, "Help Tags" },
+    r = {builtin.oldfiles, "Recent files"}
 	},
 }, { prefix = "<leader>" })
 

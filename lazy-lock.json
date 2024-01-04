@@ -1,4 +1,5 @@
 {
+  "alpha-nvim": { "branch": "main", "commit": "29074eeb869a6cbac9ce1fbbd04f5f5940311b32" },
   "catppuccin": { "branch": "main", "commit": "b901cf144573b293b6cefeb1ac8c97d5d239ee7a" },
   "image.nvim": { "branch": "master", "commit": "8e5b0b56e49d2bb8714bb95dc9c26697e1fc3068" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
