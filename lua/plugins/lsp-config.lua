@@ -26,6 +26,9 @@ return {
     lspconfig.pyright.setup({
       capabilities = capabilities
     })
+    lspconfig.marksman.setup({
+      capabilities = capabilities
+    })
   end,
 },
 }
