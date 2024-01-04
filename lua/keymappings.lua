@@ -1,6 +1,5 @@
 local wk = require("which-key")
 local builtin = require("telescope.builtin")
-
 -- Telescope keybindings
 wk.register({
 	f = {
@@ -31,6 +30,7 @@ wk.register({
 		c = {
 			name = "Code",
 			a = { vim.lsp.buf.code_action, "Code Action" },
+      g = {"<cmd>LazyGit<CR>", "LazyGit" }
 		},
 	},
 }, { mode = "n" }) -- 'n' for normal mode
