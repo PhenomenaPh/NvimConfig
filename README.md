@@ -1,4 +1,4 @@
 # NvimConfig
 My personal neovim configuration 
 
-![Some image](/Desktop/NVIM.png) 
+![Some image](./NVIM.png) 
