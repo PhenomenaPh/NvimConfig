@@ -11,6 +11,9 @@ vim.opt.smartcase = true  -- Case sensitive if search pattern is case sensitive
 
 -- Additional visual options
 vim.opt.showmatch = true -- Highlight matching [{()}]
+vim.opt.number = true          -- Show line numbers
+vim.opt.relativenumber = true  -- Show relative line numbers
+vim.opt.cursorline = true      -- Highlight the current line
 
 -- Configure autoformatting behavior
 vim.api.nvim_create_autocmd("BufEnter", {
