@@ -46,9 +46,8 @@ wk.register({
 }, { mode = "s" }) -- For select mode
 
 -- CMP
-local wk = require("which-key")
-
 wk.register({
     ["<c-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
 }, { mode = "i" }) -- 'i' for insert mode
 
+-- Trouble keys
