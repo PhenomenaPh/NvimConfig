@@ -34,3 +34,20 @@ wk.register({
 		},
 	},
 }, { mode = "n" }) -- 'n' for normal mode
+-- LuaSnip
+wk.register({
+    ["<c-j>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Snippet Jump Forward" },
+    ["<c-k>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Snippet Jump Backward" },
+}, { mode = "i" }) -- For insert mode
+
+wk.register({
+    ["<c-j>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Snippet Jump Forward" },
+    ["<c-k>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Snippet Jump Backward" },
+}, { mode = "s" }) -- For select mode
+
+-- CMP
+wk.register({
+    ["<c-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+}, { mode = "i" }) -- 'i' for insert mode
+
+-- Trouble keys

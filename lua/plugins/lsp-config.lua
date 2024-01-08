@@ -1,3 +1,16 @@
+local on_attach = function(client, bufnr)
+    -- other setup code for on_attach
+
+    -- Configure virtual text to show a circle symbol
+    vim.diagnostic.config({
+        virtual_text = {
+            prefix = '●',  -- Circle symbol as prefix
+            -- you can also customize other properties like spacing here
+        },
+        -- other diagnostic settings...
+    })
+end
+
 return {
 	{
 		"williamboman/mason.nvim",
@@ -29,14 +42,17 @@ return {
 			local lspconfig = require("lspconfig")
 
 			lspconfig.lua_ls.setup({
+        on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			lspconfig.pyright.setup({
+        on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			lspconfig.marksman.setup({
+        on_attach = on_attach,
 				capabilities = capabilities,
 			})
 		end,
