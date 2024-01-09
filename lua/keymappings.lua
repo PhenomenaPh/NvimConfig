@@ -1,5 +1,14 @@
 local wk = require("which-key")
 local builtin = require("telescope.builtin")
+
+-- Neovim remaps
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- moving selected block of text
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "J", "mzJ`z")
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- Telescope keybindings
 wk.register({
 	f = {

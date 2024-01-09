@@ -22,7 +22,7 @@ M.config = function()
     dashboard.button("f", "󰈞  > Find file", ":Telescope find_files<CR>"),
     dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("n", "  > File explorer", ":Neotree filesystem reveal left<CR>"),
-    dashboard.button("g", "󰊢 > Git GUI", ":LazyGit<CR>"),
+    dashboard.button("g", "󰊢  > Git GUI", ":LazyGit<CR>"),
     dashboard.button("s", "  > Settings", ":e ~/.config/nvim/lua/settings.lua<CR>"),
     dashboard.button("q", "󰩈  > Quit NVIM", ":qa<CR>"),
   }
