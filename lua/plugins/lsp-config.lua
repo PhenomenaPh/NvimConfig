@@ -1,6 +1,4 @@
-local on_attach = function(client, bufnr)
-    -- other setup code for on_attach
-
+local on_attach = function()
     -- Configure virtual text to show a circle symbol
     vim.diagnostic.config({
         virtual_text = {
