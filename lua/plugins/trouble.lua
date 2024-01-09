@@ -14,7 +14,7 @@ return {
       include_declaration = {
         "lsp_references",
         "lsp_implementations",
-        "lsp_definitions"
+        "lsp_definitions",
       },
       mode = "workspace_diagnostics",
       multiline = true,
@@ -30,5 +30,14 @@ return {
       },
       use_diagnostic_signs = false,
     })
+    local trouble = require("trouble")
+
+    -- Define key mappings with descriptions for the Trouble plugin
+    vim.keymap.set("n", "<leader>xx", function() trouble.toggle() end, { desc = "Toggle Trouble" })
+    vim.keymap.set("n", "<leader>xw", function() trouble.toggle("workspace_diagnostics") end, { desc = "Workspace Diagnostics" })
+    vim.keymap.set("n", "<leader>xd", function() trouble.toggle("document_diagnostics") end, { desc = "Document Diagnostics" })
+    vim.keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end, { desc = "Quickfix" })
+    vim.keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end, { desc = "Location List" })
+    vim.keymap.set("n", "gR", function() trouble.toggle("lsp_references") end, { desc = "LSP References" })
   end,
 }

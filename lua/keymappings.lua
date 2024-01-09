@@ -1,5 +1,4 @@
 local wk = require("which-key")
-local builtin = require("telescope.builtin")
 
 -- Neovim remaps
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- moving selected block of text
@@ -9,54 +8,39 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Telescope keybindings
-wk.register({
-	f = {
-		name = "Telescope",
-		f = { builtin.find_files, "Find File" },
-		g = { builtin.live_grep, "Live Grep" },
-		b = { builtin.buffers, "Buffers" },
-		h = { builtin.help_tags, "Help Tags" },
-    r = {builtin.oldfiles, "Recent files"}
-	},
-}, { prefix = "<leader>" })
-
 -- NeoTree keybinding
 wk.register({
-	["<C-n>"] = { ":Neotree filesystem reveal left<CR>", "NeoTree" },
+  ["<C-n>"] = { ":Neotree filesystem reveal left<CR>", "NeoTree" },
 }, { mode = "n" }) -- 'n' for normal mode
 
--- LSP keybindings + Null-LS
-wk.register({
-	K = { vim.lsp.buf.hover, "LSP Hover" },
-	["<leader>"] = {
-		g = {
-			name = "LSP",
-			d = { vim.lsp.buf.definition, "Go To Definition" },
-			r = { vim.lsp.buf.references, "Find References" },
-			f = { vim.lsp.buf.format, "Format code" },
-		},
-		c = {
-			name = "Code",
-			a = { vim.lsp.buf.code_action, "Code Action" },
-      g = {"<cmd>LazyGit<CR>", "LazyGit" }
-		},
-	},
-}, { mode = "n" }) -- 'n' for normal mode
 -- LuaSnip
 wk.register({
-    ["<c-j>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Snippet Jump Forward" },
-    ["<c-k>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Snippet Jump Backward" },
+  ["<c-j>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Snippet Jump Forward" },
+  ["<c-k>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Snippet Jump Backward" },
 }, { mode = "i" }) -- For insert mode
 
 wk.register({
-    ["<c-j>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Snippet Jump Forward" },
-    ["<c-k>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Snippet Jump Backward" },
+  ["<c-j>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Snippet Jump Forward" },
+  ["<c-k>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Snippet Jump Backward" },
 }, { mode = "s" }) -- For select mode
 
 -- CMP
 wk.register({
-    ["<c-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+  ["<c-s>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
 }, { mode = "i" }) -- 'i' for insert mode
 
--- Trouble keys
+-- toggleterm
+function _G.set_terminal_keymaps()
+  local opts = {buffer = 0}
+  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+  vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+  vim.keymap.set('t', '<C-q>', [[<C-\><C-n>:q<CR>]], opts) -- Example keybinding
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
