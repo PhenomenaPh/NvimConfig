@@ -60,6 +60,7 @@ return {
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go To Definition" })
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Find References" })
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format Code" })
+      vim.keymap.set("n", "<space>gn", vim.lsp.buf.rename, {desc = "Rename variable"})
 
       -- Code actions and other code-related mappings
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })

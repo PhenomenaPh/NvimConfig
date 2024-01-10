@@ -19,6 +19,7 @@ vim.opt.showmatch = true -- Highlight matching [{()}]
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true -- Highlight the current line
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { bg = "NONE" })
 
 -- Scroll options
 vim.opt.scrolloff = 8
