@@ -20,10 +20,12 @@ vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true -- Highlight the current line
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { bg = "NONE" })
+vim.opt.termguicolors = true
+vim.background = "dark"
 
 -- Scroll options
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Configure autoformatting behavior
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -55,4 +57,3 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-
