@@ -1,6 +1,6 @@
 ## NeoCrol
 
-![NVIM Setup](./NVIM.png)
+![NVIM Setup](./lua/NVIM.png)
 
 Welcome to my personalized Neovim setup, optimized for a smooth and efficient coding experience.
 

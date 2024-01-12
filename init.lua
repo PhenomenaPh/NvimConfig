@@ -11,7 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+package.path = package.path .. ";" .. "/Users/rustemhutiev/.luarocks/share/lua/5.1/?/init.lua"
+package.path = package.path .. ";" .. "/Users/rustemhutiev/.luarocks/share/lua/5.1/?.lua"
+
 require("settings")
 require("lazy").setup("plugins")
 
 require("keymappings") -- Keymappings for all the plugins
+-- Example for configuring Neovim to load user-installed installed Lua rocks:
