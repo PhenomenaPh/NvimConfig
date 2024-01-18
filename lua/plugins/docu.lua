@@ -1,7 +1,6 @@
 return {
-  "kkoomen/vim-doge",
-  event = "BufRead",
-  config = function()
-    vim.cmd([[call doge#install()]])
-  end,
+	"kkoomen/vim-doge",
+	config = function()
+		vim.cmd([[call doge#install()]])
+	end,
 }
